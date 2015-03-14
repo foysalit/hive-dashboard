@@ -1,0 +1,101 @@
+extends layout
+
+block content
+  header
+    img(src='images/HIVEPROJECTLOGO.png')
+    p #{slogan}
+
+  .cd-tabs
+    nav
+      ul(class='cd-tabs-navigation')
+        li: a( data-content="inbox", class="selected", href="#hivetab") #{hivetab}
+        li: a( data-content="new", href="#techtab") #{techtab}
+        li: a( data-content="gallery", href="#collabtab") #{collabtab}
+        li: a( data-content="store", href="#0") #{docstab}
+        li: a( data-content="settings", href="#0") #{forumtab}
+        li: a( data-content="trash", href="#0") #{membershiptab}
+    ul(class="cd-tabs-content")
+
+      li( data-content="inbox", class="selected")
+        h1 Get. Mad.
+        span(class="block-getmad")
+          img(src='images/GetMad.png', class="getmad")
+          p For decades we have been promised that the 21st century would usher in an era of human and robotic companionship. 
+            That date has came and gone and we have yet to see this promise fullfilled. And we arn't happy. The technology today surrounds us in bits and pieces and we arn't going to wait anylonger for anyone else to make it happen. It's time to start hacking. 
+        h1 About
+        span(class="block-getmad")
+          img(src='images/about.png', class="getmad")
+          p HIVE is an open source project founded on cutting edge robotic mobility technology and a newly pioneered collaboration method. Our open contributor and member's goals are to establish, evolve and spread robotic colonies in urban cities around the world
+
+        h1 An Open Source Experience:
+          p All of HIVE's designs, files, code and more are available to anyone just as any open project would be. But we realized that wasn't enough to drive what we hoped to achieve forward. We engineered a new, membership based collaboration cycle that allows our die hard members the ability to control these state of the art robots from anywhere in the world, flash their freshly written code to test and to add hardware and mechanical upgrades, evolving the mesh network enabled colonies farther into the future.  
+        .block-graphic-collab
+          img(src='images/hivecollaboration.png') 
+
+      li(data-content="new")
+        h1 Technologies for everyone!
+          p HIVE has a bold mission which uses a full spectrum of cutting edge technologies and because of this, HIVE attracts all walks of life from the hacker community. 
+
+        h1 Hardware
+          p We believe in agile, fail-fast testing. We use practical yet powerful hardware like Sabertooth driving boards, Spark Cores (wifi dev) and the essential prototyping platforms such as Arduino and Raspberry Pi. Although, we are known for getting a whole lot more intense. 
+          .block-software-logos
+            img(src='images/arduino.png')
+            img(src='images/raspberry.png' class="raspberrysize")
+
+        h1 Robotic Platform
+          p The project was founded on the belief that the cutting edge robotic mobility technology Articulated Traction Control (or ATC) invented by Transcend Robotic's cofounder Andrew ferguson will transform the world into the community's vision. ATC has made obstacles like stairs and curbs a joy to roll over. Transcend Robotics, the project sponsor has opened ATC to everyone to make their own personal versions instead of selling to the government. This robotic platform is the backbone of HIVE. Read more by clicking the images. 
+          .block-software-logos
+            img(src='images/transcend.png')
+            img(src='images/gizmodo.png' class="gizmodosize")
+            img(src='images/botmag.png' class="botmagsize")
+            img(src='images/robohub.jpg' class="robohubsize")
+          .block-software-logos
+            img(src='images/grounddrone.png' class="grounddronesize")
+
+        h1 Embedded Software 
+          p We primarily code in C++ (or Arduino sketch) and a flavor of javascripts like SparkJS and Node.js on our hardware. If you have experience writing sketches for or understand javascript you'll be writing and flashing code from your home onto the robots for testing in no time.  
+          .block-software-logos
+            img(src='images/cpp.png')
+            img(src='images/python.png') 
+
+        h1 Web / Telepresence Command Application (TCA)
+          p HIVE's priority is community engagement through robotics. A easy to use tele-presence application complete with live video stream, motion and gimbal swivel controls were table stakes. Our interface is open sourced so anyone can make their own telepresence app or extend it for additional control of the robot platform's hardware upgrades.
+          .block-software-logos
+            img(src='images/node.png') 
+            img(src='images/mongodb.png' class="mongosize") 
+            img(src='images/jade.png' class="jadesize") 
+
+        h1 Eletrical / Power
+          p Our members are ambitious and aim to replicate and if possible, improve upon the open source patents that Tesla have realeased for their batteries. We also use NiCAD, SLA, Li-poly batteries as well. 
+          .block-software-logos
+            img(src='images/tesla.png', class="teslasize") 
+
+      li(data-content="gallery")
+        h1 Collaboration
+          p The founders didn't want this to be a traditional open source experience. Read docs, github code and respond to forum posts. They wanted to have the community members build with each other in the real world and interact through real robots from their homes. Below is how we will grow these colonies and robots into the future of human robotic civilizations. 
+        .block-graphic-collab
+          img(src='images/hivecollaboration.png') 
+
+      li(data-content="store")
+        h1 Coming on April 24th, 2015 
+        
+
+      li(data-content="settings")
+        h1 Coming on April 24th, 2015 
+
+      li(data-content="trash")
+        span(class="danger")
+          img(src='images/skull.png')
+          img(src='images/danger.png')
+          img(src='images/nuclear.png')
+        br
+        br
+        span(class="githublogin")
+          a(href='github/auth')
+            img(src='/images/githublogo.png')
+            p    Tickle me!
+        br
+        br
+        span(class="join")
+          a(href='join/signup')
+            img(src='images/join.png')
