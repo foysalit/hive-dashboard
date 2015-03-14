@@ -2,9 +2,20 @@ jQuery(document).ready(function($){
 	var tabItems = $('.cd-tabs-navigation a'),
 		tabContentWrapper = $('.cd-tabs-content');
 
-	tabItems.on('click', function(event){
+	$('.cd-tab-link').on('click', function(event){
 		event.preventDefault();
-		var selectedItem = $(this);
+		changeTab($(this).data("cd-tab"));
+	});
+
+	$(function() {
+		changeTab(window.location.hash.substring(1));
+	})
+	window.onhashchange = function() {
+		changeTab(window.location.hash.substring(1));
+	}
+
+	function changeTab(tabName) {
+		var selectedItem = $(".cd-tabs-navigation a[href=#" + tabName + "]");
 		if( !selectedItem.hasClass('selected') ) {
 			var selectedTab = selectedItem.data('content'),
 				selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]'),
@@ -18,7 +29,8 @@ jQuery(document).ready(function($){
 				'height': slectedContentHeight
 			}, 200);
 		}
-	});
+	}
+
 
 	//hide the .cd-tabs::after element when tabbed navigation has scrolled to the end (mobile version)
 	checkScrolling($('.cd-tabs nav'));

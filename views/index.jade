@@ -8,12 +8,12 @@ block content
   .cd-tabs
     nav
       ul(class='cd-tabs-navigation')
-        li: a( data-content="inbox", class="selected", href="#hivetab") #{hivetab}
-        li: a( data-content="new", href="#techtab") #{techtab}
-        li: a( data-content="gallery", href="#collabtab") #{collabtab}
-        li: a( data-content="store", href="#0") #{docstab}
-        li: a( data-content="settings", href="#0") #{forumtab}
-        li: a( data-content="trash", href="#0") #{membershiptab}
+        li: a( data-content="inbox", class="selected cd-tab-link", href="#home", data-cd-tab="home") #{hivetab}
+        li: a( data-content="new", class="cd-tab-link", href="#techtab", data-cd-tab="techtab") #{techtab}
+        li: a( data-content="gallery", class="cd-tab-link", href="#collabtab", data-cd-tab="collabtab") #{collabtab}
+        li: a( data-content="store", class="cd-tab-link", href="#docstab", data-cd-tab="docstab") #{docstab}
+        li: a( data-content="settings", class="cd-tab-link", href="#forumtab", data-cd-tab="forumtab") #{forumtab}
+        li: a( data-content="trash", class="cd-tab-link", href="#membershiptab", data-cd-tab="membershiptab") #{membershiptab}
     ul(class="cd-tabs-content")
 
       li( data-content="inbox", class="selected")
@@ -25,7 +25,11 @@ block content
         h1 About
         span(class="block-getmad")
           img(src='images/about.png', class="getmad")
-          p HIVE is an open source project founded on cutting edge robotic mobility technology and a newly pioneered collaboration method. Our open contributor and member's goals are to establish, evolve and spread robotic colonies in urban cities around the world
+          p HIVE is an open source project founded on 
+            a(class="cd-tab-link", data-cd-tab="collabtab") cutting edge robotic mobility technology 
+            | and a 
+            a(class="cd-tab-link", data-cd-tab="collabtab") newly pioneered collaboration method. 
+            | Our open contributor and member's goals are to establish, evolve and spread robotic colonies in urban cities around the world
 
         h1 An Open Source Experience:
           p All of HIVE's designs, files, code and more are available to anyone just as any open project would be. But we realized that wasn't enough to drive what we hoped to achieve forward. We engineered a new, membership based collaboration cycle that allows our die hard members the ability to control these state of the art robots from anywhere in the world, flash their freshly written code to test and to add hardware and mechanical upgrades, evolving the mesh network enabled colonies farther into the future.  
