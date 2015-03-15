@@ -95,11 +95,20 @@ block content
         br
         br
         span(class="githublogin")
-          a(href='github/auth')
-            img(src='/images/githublogo.png')
-            p    Tickle me!
+          form(action="/login", method='post')
+            input(value='' name='email' placeholder='email' type='text')
+            input(value='' name='password' placeholder='password' type='text')
+            input(type='submit' value='knock')
         br
         br
         span(class="join")
-          a(href='join/signup')
-            img(src='images/join.png')
+          img(src='images/join.png')
+          form(action='/join/new_user',method='post')
+            input(value='' name='fname' placeholder='first name' type='text')
+            input(value='' name='lname' placeholder='last name' type='text')
+            input(value='' name='email' placeholder='email' type='text')
+            input(value='' name='password' placeholder='password' type='text')
+            input(value='' name='interests' placeholder='your interests' type='text')
+            input(value='' name='provider' placeholder='provider' type='text')
+            input(type='submit')
+            

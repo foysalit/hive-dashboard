@@ -4,18 +4,19 @@ var github = require('github'); //npm install github for api access
 var passport = require('passport'); // must include again at route level
 var GitHubStrategy = require('passport-github').Strategy;
 
+
 // define strategy information
 var strategy_options = {
     clientID: '0484d51fa69478689ab7',
     clientSecret: 'd99c8b737769c2215828dfbd4c701e587f6269ad',
-    callbackURL: "http://localhost:3000/auth/github/callback"	
+    callbackURL: "http://localhost:3000/auth/github/callback",
 }
 
 //passport use gothub strategy keys
 passport.use(new GitHubStrategy({
     clientID: '0484d51fa69478689ab7',
     clientSecret: 'd99c8b737769c2215828dfbd4c701e587f6269ad',
-    callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: "http://hiveproject/auth/github/callback"
   },
   //find the user withr returned data
   function(accessToken, refreshToken, profile, done) {

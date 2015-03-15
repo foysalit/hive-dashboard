@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose'); // driver: mongodb://<dbuser>:<dbpassword>@ds035250.mongolab.com:35250/hive
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -14,8 +15,13 @@ var passport = require('passport'); // grab passport
 //route for github
 var github = require('./routes/github');
 var join = require('./routes/join');
+var login = require('./routes/login');
 
 var app = express();
+var membersdashboard = require('./routes/membersdashboard');
+// Connectio sting                              this is mongolab URL PORT   DB Name
+mongoose.connect("mongodb://phillip:wunderMe2@ds035250.mongolab.com:35250/hive")
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,8 +49,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+var authRequired =function(req,res,next){
+    if(!req.session.userInfo){
+        res.redirect('/');
+        res.status(401).end();
+    }else{
+        next();
+    }
+}
+app.use('/github',authRequired);
 app.use('/github',github);
 app.use('/join', join);
+app.use('/login', login);
+app.use('/membersdashboard', membersdashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

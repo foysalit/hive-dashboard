@@ -4,3 +4,13 @@ block content
   header
     img(src='/images/HIVEPROJECTLOGO.png')
     p #{slogan}
+  br
+  br
+  form(action='/join/new_user',method='post')
+    input(value='' name='fname' placeholder='first name' type='text')
+    input(value='' name='lname' placeholder='last name' type='text')
+    input(value='' name='email' placeholder='email' type='text')
+    input(value='' name='password' placeholder='password' type='text')
+    input(value='' name='interests' placeholder='your interests' type='text')
+    input(value='' name='provider' placeholder='provider' type='text')
+    input(type='submit')
