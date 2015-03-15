@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
   	collabtab: 'COLLAB.',
   	docstab: 'DOCS',
   	forumtab: 'FORUM',
-  	membershiptab: 'MEMBERS',
+  	membershiptab: 'JOIN',
   	slogan: 'An open source experience'
   	});
 });
