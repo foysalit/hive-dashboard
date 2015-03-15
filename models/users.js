@@ -8,7 +8,8 @@ function sendEmail(email, callback){
 		from:'no-reply@hiveproject.org',
 		subject:"Hello",
 		to:email,
-		text:'Welcome to the machine'
+		text:'Welcome to the HIVE. We will keep you informed as the community grows and new members are brought in. 
+		In the mean time, checkout all the documentation on the site at www.hiveproject.org'
 	},callback);
 }
 //First define schemas
