@@ -29,25 +29,25 @@ block content
         #activate-bot
           h1 Activate
           #content
-            input(type="checkbox" class="check" id="one" name="activate" checked)
-            label(for="one")
-                div(id="thumb" class="metal radial")
+            input(type="checkbox" class="check" id="activate" name="activate")
+            label(for="activate")
+              div(id="thumb" class="metal radial")
           br
           h1 Pick Bot
           #content
-            input(type="checkbox" class="check" id="two" name="check_two" checked)
+            input(type="checkbox" class="check" id="two" name="check_two")
             label(for="two")
-                div(id="thumb" class="metal radial")
+              div(id="thumb" class="metal radial")
             | Walter Forrest White
           #content
-            input(type="checkbox" class="check" id="three" name="check_two" checked)
+            input(type="checkbox" class="check" id="three" name="check_two")
             label(for="three")
-                div(id="thumb" class="metal radial")
+              div(id="thumb" class="metal radial")
             | John Ravens Oglethorpe
           br
           h1 MPH
           br
-          input(type="range" min="0" max="5" value="0" step="1" onchange="rangevalue.value=value")
+          input(type="range" id="degBoxId" min="0" max="5" value="0" step="1" onchange="rangevalue.value=value")
           br
           output(id="rangevalue" class="output")
           br

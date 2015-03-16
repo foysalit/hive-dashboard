@@ -158,7 +158,7 @@ width:100%;
 height:100%;
 padding:0;
 margin:0;
-background:#2f3437 url(http://lab.web-gate.fr/images/Noise-Fill.png);
+background:#2f3437;
 }
 /*=== Let's style the elements ===*/
 ::selection{
@@ -244,7 +244,7 @@ label:after{
          0 0 15px #e04145;}
 
 /* Now, make it move */
-#one:checked ~ label[for=one] #thumb {
+#activate:checked ~ label[for=activate] #thumb {
     margin: -3px 31px;
 }
 
@@ -259,7 +259,7 @@ label:after{
 
 label:before,
 #thumb,
-#one:checked ~ label[for=one]:before,
+#one:checked ~ label[for=activate]:before,
 #two:checked ~ label[for=two]:before,
 #three:checked ~ label[for=three]:before {
     -webkit-transition: all .2s;

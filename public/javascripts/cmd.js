@@ -56,6 +56,7 @@ $('body').on('keydown', function (event) { // whole page onclick
         currentCommand = 'turnright';
         actual_speed = convertToDegrees(speed);
       break
+      /*
     case 75:
         currentCommand = 'thr';
         actual_speed = '33';
@@ -74,8 +75,10 @@ $('body').on('keydown', function (event) { // whole page onclick
       break;
     default:
       currentCommand = null;
+      */
   }
-     
+  
+
   if(currentCommand){
     var requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + currentCommand + "/";
               // execution post of lrequest string
@@ -84,8 +87,19 @@ $('body').on('keydown', function (event) { // whole page onclick
 
 });
 
- 
-$('body').on('keyup', function () {
+var isChecked = $('#activate').is(':checked');
+alert(isChecked);
+
+
+$('label').on("click", function(){ //put ID of div here
+  alert("testwww"); // once this owrks
+  //copy everything from 96 - 107
+});
+
+
+
+
+$('body').on('keyup', function (){
   is_keydown = false;
   if(!currentCommand){return}
   if(currentCommand === 'turnheadleft' || currentCommand === 'thr' || currentCommand === 'lookup' || currentCommand === 'lookdown'){
@@ -106,7 +120,7 @@ $('#degBoxId').on('change', function (event) {
   $('#curPos').text(speed);//assigns ID #curPos the newly made speed
 });
 
-
+/*
 // decrementing down with fineAdjust function
 $('#minusbutton').on('click', function (event) {
   fineAdjust(-1);
@@ -117,6 +131,8 @@ $('#minusbutton').on('click', function (event) {
 $('#plusbutton').on('click', function (event) {
   fineAdjust(1);
 });
+*/
+
 
 // Map mph to degrees of which the control is manipulated through
 function convertToDegrees(value){
