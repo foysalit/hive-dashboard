@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose'); // driver: mongodb://<dbuser>:<dbpassword>@ds035250.mongolab.com:35250/hive
 
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -16,9 +17,8 @@ var passport = require('passport'); // grab passport
 var github = require('./routes/github');
 var join = require('./routes/join');
 var login = require('./routes/login');
-
+var command = require('./routes/command');
 var app = express();
-var membersdashboard = require('./routes/membersdashboard');
 // Connectio sting                              this is mongolab URL PORT   DB Name
 mongoose.connect("mongodb://phillip:wunderMe2@ds035250.mongolab.com:35250/hive")
 
@@ -62,7 +62,7 @@ app.use('/github',authRequired);
 app.use('/github',github);
 app.use('/join', join);
 app.use('/login', login);
-app.use('/membersdashboard', membersdashboard);
+app.use('/command', command);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

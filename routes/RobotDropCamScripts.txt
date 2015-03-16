@@ -1,0 +1,8 @@
+Walter_Forrest _White.dropcam({
+	VideoEmbedScript: <object width="480" height="394"><param name="movie" value="https://www.dropcam.com/e/eada72abf006448abaaa076fa8b694ae?autoplay=false"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="opaque"></param><embed src="https://www.dropcam.com/e/eada72abf006448abaaa076fa8b694ae?autoplay=false" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="394" wmode="opaque"></embed></object>,
+
+})
+
+Don_Raven_Draper.dropcam({
+	VideoEmbedScript: 
+})

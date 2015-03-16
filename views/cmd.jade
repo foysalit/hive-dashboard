@@ -1,0 +1,65 @@
+extends cmdlayout
+
+block content
+  .div-wrapper
+    .settingsbar
+      img(src='/images/HIVEPROJECTLOGO.png')
+
+    nav(class='sidebar sidebar-menu-collapsed')
+      a(href="#" id='justify-icon')
+        span(class='glyphicon glyphicon-align-justify')
+
+      ul
+        li(class='active'): a(href='#' title='Dashboard')
+          span(class='glyphicon glyphicon-home collapsed-element')
+          span(class='expanded-element') Dashboard
+        li: a(class='expandable' href='#' title='Settings')
+          span(class='glyphicon glyphicon-cog collapsed-element')
+          span(class='expanded-element') Settings
+        li: a(class='expandable' href='#' title='Account')
+          span(class='glyphicon glyphicon-user collapsed-element')
+          span(class='expanded-element') Account
+
+      a(href='#' id='logout-icon' title='Logout')
+        span(class='glyphicon glyphicon-off')
+
+    .cmd-gui
+      #video-feed
+        <object width="480" height="394"><param name="movie" value="https://www.dropcam.com/e/eada72abf006448abaaa076fa8b694ae?autoplay=false"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="opaque"></param><embed src="https://www.dropcam.com/e/eada72abf006448abaaa076fa8b694ae?autoplay=false" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="394" wmode="opaque"></embed></object>
+        #activate-bot
+          h1 Activate
+          #content
+            input(type="checkbox" class="check" id="one" name="activate" checked)
+            label(for="one")
+                div(id="thumb" class="metal radial")
+          br
+          h1 Pick Bot
+          #content
+            input(type="checkbox" class="check" id="two" name="check_two" checked)
+            label(for="two")
+                div(id="thumb" class="metal radial")
+            | Walter Forrest White
+          #content
+            input(type="checkbox" class="check" id="three" name="check_two" checked)
+            label(for="three")
+                div(id="thumb" class="metal radial")
+            | John Ravens Oglethorpe
+          br
+          h1 MPH
+          br
+          input(type="range" min="0" max="5" value="0" step="1" onchange="rangevalue.value=value")
+          br
+          output(id="rangevalue" class="output")
+          br
+          h1 Keypad Controls
+          br
+          .cd-tabs-navigation
+            ul 
+              li: a(data-content="up")
+              li: a(data-content="left")
+              li: a(data-content="down")
+              li: a(data-content="right")
+
+
+
+

@@ -1,0 +1,456 @@
+body{
+  background-color: #1E1E20 !important;
+}
+
+.div-wrapper{
+    display : block;
+    width : 100%px;
+    overflow : auto;
+}
+
+.div-wrapper .settingsbar{
+  float: left;
+  clear:none;
+  background-color: #1E1E20;
+  width: 100%;
+  padding: 10px;
+  /*
+  position: relative;
+  */
+}
+
+.settingsbar img {
+  width: 100px;
+  height: 100px;
+}
+
+.cmd-gui{
+    float: left;
+    clear: none;
+    background-color: #070708;
+    width: 100%;
+    height: 100%;
+    max-width: 854px;
+}
+
+#video-feed{
+    position: relative;
+    max-width: 768px;
+    max-height: 805px;
+    margin-left: 100px;
+    padding: 10px;
+    top: 50%;
+    padding:20px;
+}
+
+#activate-bot{
+    float: right;
+    clear: none;
+    width:225px;
+}
+
+#activate-bot h1{
+    font-weight: 2em;
+    color: #EC222B;
+}
+
+.sidebar .sidebar-menu-collapsed{
+    background: none repeat scroll 0 0 white;
+}
+
+/* nav bar below */
+nav.sidebar-menu-collapsed {
+  width: 106px; 
+}
+
+nav.sidebar-menu-expanded {
+  width: 106px; 
+}
+
+nav.sidebar {
+  float: left;
+  clear: none;
+  margin-top: 120px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  background: none repeat scroll 0 0 #1E1E20;
+  color: white;
+  padding: 20px 10px;
+}
+  nav.sidebar a#justify-icon {
+    outline: 0;
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    padding-left: 8px; 
+}
+  nav.sidebar a#logout-icon {
+    outline: 0;
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    position: absolute;
+    bottom: 10px;
+    left: 10px; 
+}
+  nav.sidebar ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px; } /* changed from 60 */
+    nav.sidebar ul li {
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      list-style-type: none; }
+      nav.sidebar ul li a.expandable {
+        outline: 0;
+        color: white;
+        text-decoration: none;
+        font-size: 20px; }
+        nav.sidebar ul li a.expandable:hover {
+          color: #EC222B; }
+        nav.sidebar ul li a.expandable span.expanded-element {
+          margin-left: 2px;
+          display: none;
+          font-size: 11px;
+          position: relative;
+          bottom: 2px; }
+      nav.sidebar ul li.active {
+        background: none repeat scroll 0 0 none;
+        border-radius: 4px;
+        text-align: center;
+        margin-left: -4px;
+        padding: 4px; }
+        nav.sidebar ul li.active a.expandable {
+          color: white !important; }
+          nav.sidebar ul li.active a.expandable:hover {
+            color: white !important; }
+
+
+
+
+
+/* sliders*/
+/*=== Style ===*/ 
+/*=== Import Raleway fonts ===*/
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+
+/*=== Import icon fonts (http://weloveiconfonts.com) ===*/
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* entypo */
+[class*="fontawesome-"]:before{
+font-family:'fontawesome', sans-serif;
+}
+/*=== Reset & General style ===*/
+*{
+-webkit-font-smoothing:antialiased;
+-webkit-box-sizing:border-box; 
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+font-family:"Raleway",Helvetica;
+}
+body,html{
+width:100%;
+height:100%;
+padding:0;
+margin:0;
+background:#2f3437 url(http://lab.web-gate.fr/images/Noise-Fill.png);
+}
+/*=== Let's style the elements ===*/
+::selection{
+background:transparent;
+}
+P{
+text-align:center;
+}
+#content{
+width:220px;
+margin:5px auto;
+}
+
+
+/* 1 -Hide the inputs */
+input[type=checkbox]{
+display:none;
+}
+/* 2 -Prepare labels */
+#thumb{
+content:'';
+height:18px;
+display:block;
+float:left;
+width:18px;
+padding:0px;
+margin:-3px 0px;
+/*border-radius*/
+-webkit-border-radius:50%;
+   -moz-border-radius:50%;
+        border-radius:50%;
+  box-shadow:0 0 2px rgba(0,0,0,1),0 0 10px rgba(0,0,0,.2), -5px 5px 10px rgba(0,0,0,.2), -10px 10px 10px rgba(0,0,0,.1), 0 0 2px rgba(0,0,0,.6);
+position:absolute;
+z-index:1;
+}
+label{
+  display:block;
+  width:50px;
+  height:20px;
+  margin:10px 0;
+  padding:4px 0;
+  background:#232629;
+  border-radius:50px;
+  box-shadow:0 1px 0 rgba(255,255,255,.1), inset 0 4px 5px rgba(0,0,0,.4),inset 0 0px 1px #000; 
+}
+label:before{
+  content:'';
+  display:block;
+  position:absolute;
+   margin: 2px 5px;
+    width: 10px;
+    height: 10px;
+   background: -webkit-radial-gradient(#31bf49 ,#39c252);
+    border-radius: 50%;
+    box-shadow:#000 0px 0px 1px,
+         inset #000 0px 0px 1px, 
+         inset #000 0px 0px 1px, 
+         inset #460 0 -1px 9px,
+         inset #fff 0 1px 1px ,
+         inset rgba(255,255,255,.4) 0 3px 4px ,
+         inset rgba(255,255,255,.6) 0 -2px 4px ,
+         0 0 5px #39c252,
+         0 0 15px #39c252;
+
+}
+label:after{
+  content:'';
+  display:block;
+   margin: 2px 34px;
+    width: 10px;
+    height: 10px;
+    background: -webkit-radial-gradient(#f00,#e04145);
+    border-radius: 50%;
+  box-shadow:#000 0px 0px 1px,
+         inset #000 0px 0px 1px, 
+         inset #000 0px 0px 1px, 
+             inset #000 0px 0px 1px, 
+         inset #e04145 0 -1px 9px,
+         inset #fff 0 1px 1px ,
+         inset rgba(255,255,255,.4) 0 3px 4px ,
+         inset rgba(255,255,255,.6) 0 -2px 4px ,
+         0 0 5px #e04145,
+         0 0 15px #e04145;}
+
+/* Now, make it move */
+#one:checked ~ label[for=one] #thumb {
+    margin: -3px 31px;
+}
+
+#two:checked ~ label[for=two] #thumb {
+    margin: -3px 31px;
+}
+
+#three:checked ~ label[for=three] #thumb {
+    margin: -3px 31px;
+}
+
+
+label:before,
+#thumb,
+#one:checked ~ label[for=one]:before,
+#two:checked ~ label[for=two]:before,
+#three:checked ~ label[for=three]:before {
+    -webkit-transition: all .2s;
+-moz-transition: all .2s;
+transition: all .2s;
+}
+
+
+
+/*=== Classes  ===*/
+
+/* Metal ------------------------- */
+
+.metal{
+position:relative;
+margin:40px auto;
+background-color:hsl(0,0%,10%);
+/* border */
+    inset hsla(0,0%,15%, .8) 0 -1px 5px 4px, /* soft SD */
+    inset hsla(0,0%,0%, .25) 0 -1px 0px 7px, /* bottom SD */
+    inset hsla(0,0%,100%,.7) 0  2px 1px 7px, /* top HL */
+    
+    hsla(0,0%, 0%,.15) 0 -5px 6px 4px, /* outer SD */
+ hsla(0,0%,100%,.9) 0  5px 6px 4px;
+/* outer HL */
+
+}
+/* Radial ------------------------- */
+
+.radial.metal{ 
+
+line-height:160px;
+/*border-radius*/
+-webkit-border-radius:80px;
+   -moz-border-radius:80px;
+        border-radius:80px; 
+background-image:-webkit-radial-gradient(  50%   0%,  8% 50%, hsla(0,0%,100%,1) 0%, hsla(0,0%,100%,.1) 100%),    -webkit-radial-gradient(  50% 100%, 12% 50%, hsla(0,0%,100%,.6) 0%, hsla(0,0%,100%,0) 100%),    -webkit-radial-gradient(   0%  50%, 50%  7%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),    -webkit-radial-gradient( 100%  50%, 50%  5%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),        -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   3%, hsla(0,0%,  0%,.1) 3.5%),    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%,.1) 7.5%),    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.2) 2.2%),        -webkit-radial-gradient( 50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%);
+}
+.metal.radial:before, .metal.radial:after{
+content:"";
+top:0;
+left:0;
+position:absolute;
+width:inherit;
+height:inherit;
+/*border-radius*/
+-webkit-border-radius:inherit;
+   -moz-border-radius:inherit;
+        border-radius:inherit;
+/* fake conical gradients */
+background-image:-webkit-radial-gradient(  
+    50%   0%, 10% 50%, 
+    hsla(0,0%,0%,.5) 0%, 
+    hsla(0,0%,0%,.1) 100%
+   ),    
+    -webkit-radial-gradient(  
+    50% 100%, 10% 50%, 
+    hsla(0,0%,0%,.2) 0%, 
+    hsla(0,0%,0%,0) 100%
+    ),   
+    -webkit-radial-gradient(   
+    0%  50%, 50% 10%, 
+    hsla(0,0%,0%,.1) 0%, 
+    hsla(0,0%,0%,0) 100%
+    ),    
+    -webkit-radial-gradient( 
+    100%  50%, 50% 06%, 
+    hsla(0,0%,0%,.1) 0%, 
+    hsla(0,0%,0%,0) 100%
+    );
+}
+.metal.radial:before{
+/*transform*/
+-webkit-transform:rotate( 65deg);
+   -moz-transform:rotate( 65deg);
+    -ms-transform:rotate( 65deg);
+     -o-transform:rotate( 65deg);
+        transform:rotate( 65deg);
+}
+.metal.radial:after{
+/*transform*/
+-webkit-transform:rotate(-65deg);
+   -moz-transform:rotate(-65deg);
+    -ms-transform:rotate(-65deg);
+     -o-transform:rotate(-65deg);
+        transform:rotate(-65deg);
+}
+
+/* SLIDER BAR */
+input[type='range'] {
+    -webkit-appearance: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #999;
+    height: 10px;
+    vertical-align: middle;
+}
+input[type='range']::-moz-range-track {
+    -moz-appearance: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #999;
+    height: 10px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border-radius: 20px;
+    background-color: #FFF;
+    box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+    border: 1px solid #999;
+    height: 20px;
+    width: 20px;
+}
+input[type='range']::-moz-range-thumb {
+    -moz-appearance: none;
+    border-radius: 20px;
+    background-color: #FFF;
+    box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+    border: 1px solid #999;
+    height: 20px;
+    width: 20px;
+}
+
+/* icons for controls */
+.cd-tabs-navigation a::before {
+  /* icons */
+  position: absolute;
+  top: 12px;
+  display: inline-block;
+  height: 20px;
+  width: 20px !important;
+  background-image: url("../images/vicons.svg");
+  background-repeat: no-repeat;
+}
+.cd-tabs-navigation a[data-content='left']::before {
+  background-position: 0 -180px;
+}
+.cd-tabs-navigation a[data-content='down']::before {
+  background-position: -100px -160px;
+}
+.cd-tabs-navigation a[data-content='up']::before {
+  background-position: -140px -160px;
+}
+.cd-tabs-navigation a[data-content='right']::before {
+  background-position: -160px -160px;
+}
+
+.cd-tabs-navigation ul{
+    border: 3px solid;
+}
+@media only screen and (min-width: 768px) {
+  .cd-tabs-navigation {
+    /* move the nav to the left on medium sized devices */
+    width: 80px;
+    float: left;
+  }
+  .cd-tabs-navigation a {
+    height: 80px;
+    width: 80px;
+    padding-top: 46px;
+  }
+  .cd-tabs-navigation a.selected {
+    box-shadow: inset 2px 0 0 #f05451;
+  }
+  .cd-tabs-navigation a::before {
+    top: 22px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .cd-tabs-navigation {
+    /* tabbed on top on big devices */
+    width: auto;
+    background-color: white
+    box-shadow: inset 0 -2px 3px rgba(203, 196, 130, 0.06);
+  }
+  .cd-tabs-navigation a {
+    height: 20px;
+    line-height: 20px;
+    width: auto;
+    text-align: left;
+    font-size: 14px;
+    font-size: 1.0rem;
+    padding: 0 1.8em 0 1.6em;
+  }
+  .cd-tabs-navigation a.selected {
+    box-shadow: inset 0 2px 0 yellow;
+  }
+  .cd-tabs-navigation a::before {
+    top: 50%;
+    margin-top: -10px;
+    margin-left: 0;
+    left: 15px;
+  }
+}
