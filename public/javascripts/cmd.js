@@ -27,26 +27,21 @@ var setFunc = "setpos";
 //Updating speed output
 
 $('#degBoxId').val(speed); // sets any ID with degBoxId to value speed
-// If i want to do multiple things use class. i.e. if i have multiple degree boxes and I want to set them. 
-// use class anywhere I want it to be set. 
-//Updates now for first update
 
 
 // END OF ROBOT DRIVE COMMANDS ONLY
 
-//whenever the slider changes, it will update the current position by re-assigning speed value
-/*
 $('#degBoxId').on('change', function (event) {
   speed = event.target.value;
-  $('#curPos').text(speed);//assigns ID #curPos the newly made speed
+  //$('#curPos').text(speed);//assigns ID #curPos the newly made speed
 });
-*/
+
+
 /*
 // decrementing down with fineAdjust function
 $('#minusbutton').on('click', function (event) {
   fineAdjust(-1);
 });
-
 
 // Incrementing 
 $('#plusbutton').on('click', function (event) {
@@ -56,8 +51,8 @@ $('#plusbutton').on('click', function (event) {
 
 // ROBOT DRIVE COMMANDS ONLY
       var is_keydown = false;
-      var $activator = $('input[name="activator"]'),
-          $bot_selectors = $('.bot-selector');
+      var $activator = $('input[name="activator"]'), // see if activate button works
+          $bot_selectors = $('.bot-selector'); //grab class selectors, grabbing all of them
 
 
       var checkRobotAvailability = function (bot_id, cb) {
@@ -76,74 +71,85 @@ $('#plusbutton').on('click', function (event) {
         });
         
         apiCall.error(function (){
-          if (typeof cb == 'function')
-            cb(false);
+          if (typeof cb == 'function') // defines typeof which is equal to function
+            cb(false); // send false
         });
       };
 
-      var updateRobotAvailability = function (bot_id, status, cb) {
-        var apiCall = $.ajax({
+      // Update robot model 
+      var updateRobotAvailability = function (bot_id, status, cb) { //grab bot id
+        var apiCall = $.ajax({ // make call to availabilty api
           method: 'POST',
-          url: '/robots/availability',
+          url: '/robots/availability', 
           data: {
             id: bot_id,
-            status: status
+            status: status // same as availabile : available in model
           },
           dataType: 'json'
         });
         
         apiCall.done(function(res){
-          if (typeof cb == 'function')
+          if (typeof cb == 'function') //check if callback sent reply
             cb(res.status);
         });
         
-        apiCall.error(function (){
+        apiCall.error(function (){ //handle callback error
           if (typeof cb == 'function')
             cb(false);
         });
       };
-
-          
-      function isBotActive(bot_id) {
-        $bot_selector = $('#'+ bot_id);
-        
-        return $bot_selector.is(':checked')
-      }
-      
-      function hasCommandableBot() {
-         return hasOneActiveBot() && $activator.is(':checked');
-      }
       
       function hasOneActiveBot() {
-        var active = false;
+        var active = false; //no active by default
         
-        $bot_selectors.each(function(i, el) {
-          if (!active && el.checked)
+        $bot_selectors.each(function(i, el) { //loop #bot selector tags
+          if (!active && el.checked) // if selector botid is not active and now checked, make active to stop others from using it
             active = true;
         });
+        return active; // return true or false
+      }
+
+      //validate if bot selected is active
+      function isBotActive(bot_id) { // pass ID from jade app
+        $bot_selector = $('#'+ bot_id); 
         
-        return active;
+        return $bot_selector.is(':checked') // returns true or false
       }
       
+      //validate if a commandable bot is there
+      function hasCommandableBot() { // validate if a bot is chosen
+         return hasOneActiveBot() && $activator.is(':checked'); // chosen and active bot
+      }
+      
+
+
+      // Updating mechanism + messages
       $activator.on('change', function(e) {
-        $bot_selectors.each(function (i, el){
+        $bot_selectors.each(function (i, el){ //loop bots
           var $el = $(el),
-              id = $el.data('id');
-          
-          if (!this.checked) {
-            updateRobotAvailability(id, true, function (){
-              alert('Robot is now available for others.');
+              id = $el.data('id'); // find bot id via data-id
+
+          if (!this.checked) { // if bot selector unchecked from jade
+            updateRobotAvailability(id, true, function (){ // bot id from line 132, now update db if checked
+              alert('Robot is now available for others.'); //notfiy not checked
             });
             return;
           }
-            
+
+          if(this.checked) {
+            updateRobotAvailability(id, false, function(){
+              alert('Robot now in use.');
+            });
+            return;
+          }
+
           checkRobotAvailability(id, function(status){
             console.log(status);
             
-            if (!status) {
-              alert('The bot is occupied');
+            if (!status) { // robot occupied
+              alert('The bot is occupied'); // msg
             } else {
-              updateRobotAvailability(id, false);
+              updateRobotAvailability(id, false); //
             }
           });
         });
@@ -151,7 +157,7 @@ $('#plusbutton').on('click', function (event) {
       
       $(document).on('keydown', function (event) { // whole page onclick
         if (!hasCommandableBot()){
-          alert('bot is not activated or chosen');
+          alert('Bot is not activated or chosen');
           return;
         }
         
@@ -241,6 +247,7 @@ function fineAdjust(value) {
 
   // conversion needs to happen here befoe being given to speed then to function on backend
   speed = setValue;
+  alert(speed);
   //sp(setValue); //sets current position
 }
 });
