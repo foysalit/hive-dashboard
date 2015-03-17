@@ -18,6 +18,7 @@ var github = require('./routes/github');
 var join = require('./routes/join');
 var login = require('./routes/login');
 var command = require('./routes/command');
+var robots = require('./routes/robots');
 var app = express();
 // Connectio sting                              this is mongolab URL PORT   DB Name
 mongoose.connect("mongodb://phillip:wunderMe2@ds035250.mongolab.com:35250/hive")
@@ -63,6 +64,7 @@ app.use('/github',github);
 app.use('/join', join);
 app.use('/login', login);
 app.use('/command', command);
+app.use('/robots', robots);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -11,7 +11,7 @@ router.post('/',function (req,res,next) {
 		if(!error&&doc){
 			req.session.userInfo=email;
 
-			res.redirect('/');
+			res.redirect('/command');
 		}else{
 			res.redirect('/');
 		}
@@ -22,7 +22,7 @@ router.get('/',function(req,res,next){
 	if(req.session.userInfo){
 		res.redirect('/');
 	}else{
-		res.redirect('memberstab');
+		res.redirect('/command');
 	}
 });
 

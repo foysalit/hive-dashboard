@@ -16,6 +16,7 @@ router.post('/new_user',function(req,res,next){
 	var interests = req.param('interests');
 	var password = req.param('testing');
 	var provider = req.param('provider');
+	console.log(email, fname, provider);
 
 	User.create(email,fname,lname,interests,password,provider,function(error,doc){
 		console.log(error,doc);

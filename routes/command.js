@@ -1,13 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var Robot = require('../models/robots');
 
 router.get('/',function (req,res,next) {
-	res.render('cmd', {
-		title: 'Command', 
-		community: 'Community'
+	Robot.fetchRobots(function (robots){
+		res.render('cmd', {
+			title: 'Command', 
+			community: 'Community',
+			robots: robots
+		});
 	});
-
 });
+
 
 
 module.exports = router;

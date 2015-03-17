@@ -10,7 +10,7 @@ block content
         span(class='glyphicon glyphicon-align-justify')
 
       ul
-        li(class='active'): a(href='#' title='Dashboard')
+        li: a(href='#' title='Dashboard' class='expandable')
           span(class='glyphicon glyphicon-home collapsed-element')
           span(class='expanded-element') Dashboard
         li: a(class='expandable' href='#' title='Settings')
@@ -27,29 +27,30 @@ block content
       #video-feed
         <object width="480" height="394"><param name="movie" value="https://www.dropcam.com/e/eada72abf006448abaaa076fa8b694ae?autoplay=false"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="opaque"></param><embed src="https://www.dropcam.com/e/eada72abf006448abaaa076fa8b694ae?autoplay=false" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="394" wmode="opaque"></embed></object>
         #activate-bot
-          h1 Activate
-          #content
-            input(type="checkbox" class="check" id="activate" name="activate")
-            label(for="activate")
-              div(id="thumb" class="metal radial")
+          h1 Choose bot
+            br
+            br
+            each robot in robots
+              if robot._id
+                .switch
+                    input(type="checkbox" id="bot1" class="bot-selector" data-id="#{robot._id}")
+                    label
+                      .fontawesome-ok
+                  h1 #{robot.name}     
           br
-          h1 Pick Bot
-          #content
-            input(type="checkbox" class="check" id="two" name="check_two")
-            label(for="two")
-              div(id="thumb" class="metal radial")
-            | Walter Forrest White
-          #content
-            input(type="checkbox" class="check" id="three" name="check_two")
-            label(for="three")
-              div(id="thumb" class="metal radial")
-            | John Ravens Oglethorpe
           br
           h1 MPH
           br
           input(type="range" id="degBoxId" min="0" max="5" value="0" step="1" onchange="rangevalue.value=value")
           br
           output(id="rangevalue" class="output")
+          br
+          h1 Activate
+            .switch
+              input(type="checkbox" id="activate" name="activator" value="1")
+              label
+                .fontawesome-ok
+          br
           br
           h1 Keypad Controls
           br
