@@ -2,7 +2,14 @@ var express = require('express');
 var router = express.Router();
 var Robot = require('../models/robots');
 
-router.get('/',function (req,res,next) {
+router.get('/', function (req, res, next) {
+	return next();
+	if (req.session.userInfo) {
+		next();
+	} else {
+		res.redirect("/");
+	}
+}, function (req,res,next) {
 	Robot.fetchRobots(function (robots){
 		res.render('cmd', {
 			title: 'Command', 

@@ -9,9 +9,11 @@ router.get('/',function (req,res,next) {
 });
 
 router.post('/availability', function (req, res){
-	Robot.updateAvailability(req.params.status, req.params.id, function (){
+	console.log(req.body);
+	Robot.updateAvailability(req.body.status, req.body.id, function (error, robot){
+		console.log(robot);
 		res.json({
-			status: req.params.status
+			status: req.body.status
 		});
 	});
 });

@@ -125,27 +125,25 @@ $('#plusbutton').on('click', function (event) {
 
       // Updating mechanism + messages
       $activator.on('change', function(e) {
+        var totalRobots = $bot_selectors.length,
+            activeRobots = 0,
+            activating = this.checked;
+            
         $bot_selectors.each(function (i, el){ //loop bots
+          if (activating > 0)
+            return;
+          
           var $el = $(el),
               id = $el.data('id'); // find bot id via data-id
 
           if (!this.checked) { // if bot selector unchecked from jade
-            updateRobotAvailability(id, true, function (){ // bot id from line 132, now update db if checked
-              alert('Robot is now available for others.'); //notfiy not checked
-            });
+            updateRobotAvailability(id, true); // bot id from line 132, now update db if checked
             return;
           }
-
-          if(this.checked) {
-            updateRobotAvailability(id, false, function(){
-              alert('Robot now in use.');
-            });
-            return;
-          }
-
+          
+          
+          ++activeRobots;
           checkRobotAvailability(id, function(status){
-            console.log(status);
-            
             if (!status) { // robot occupied
               alert('The bot is occupied'); // msg
             } else {
@@ -153,6 +151,12 @@ $('#plusbutton').on('click', function (event) {
             }
           });
         });
+        
+        if (activating) {
+          alert(' Robots is now active');
+        } else {
+          alert(' Robot is now available.'); //notfiy not checked
+        }
       });
       
       $(document).on('keydown', function (event) { // whole page onclick
