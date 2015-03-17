@@ -192,22 +192,22 @@ header p {
   background-position: -120px -80px;
 }
 .cd-tabs-navigation a[data-content='inbox'].selected::before {
-  background-position: 0 -20px;
+  background-position: -140px -120px;
 }
 .cd-tabs-navigation a[data-content='new'].selected::before {
-  background-position: -20px -20px;
+  background-position: -0px -60px;
 }
 .cd-tabs-navigation a[data-content='gallery'].selected::before {
-  background-position: -40px -20px;
+  background-position: -60px -60px;
 }
 .cd-tabs-navigation a[data-content='store'].selected::before {
-  background-position: -60px -20px;
+  background-position: -20px -20px;
 }
 .cd-tabs-navigation a[data-content='settings'].selected::before {
-  background-position: -80px -20px;
+  background-position: -40px -100px;
 }
 .cd-tabs-navigation a[data-content='trash'].selected::before {
-  background-position: -100px -20px;
+  background-position: -120px -80px;
 }
 @media only screen and (min-width: 768px) {
   .cd-tabs-navigation {
