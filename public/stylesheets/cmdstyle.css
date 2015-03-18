@@ -227,15 +227,15 @@ nav.sidebar {
 
 .switch .fontawesome-remove {
   font-size: 29px;
-    left: 2px;
+  left: 2px;
   position: relative;
-    top: 12px;
-    z-index: 2;
+  top: 12px;
+  z-index: 2;
 }
 
 /* Checked States */
 .switch input:checked~label {
-    background: #2fca6c;
+  background: #2fca6c;
   color: #13ad4f;
 }
 

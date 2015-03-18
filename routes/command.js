@@ -3,7 +3,6 @@ var router = express.Router();
 var Robot = require('../models/robots');
 
 router.get('/', function (req, res, next) {
-	return next();
 	if (req.session.userInfo) {
 		next();
 	} else {
